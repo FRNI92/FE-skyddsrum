@@ -15,6 +15,8 @@ const initialForm: ContactFormPayload = {
 export default function ContactPage() {
   const [form, setForm] = useState<ContactFormPayload>(initialForm);
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const updateField = (field: keyof ContactFormPayload, value: string) => {
     setForm((current) => ({ ...current, [field]: value }));
@@ -22,9 +24,19 @@ export default function ContactPage() {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await submitContactForm(form);
-    setSent(true);
-    setForm(initialForm);
+    setSent(false);
+    setError(false);
+    setIsSubmitting(true);
+
+    try {
+      await submitContactForm(form);
+      setSent(true);
+      setForm(initialForm);
+    } catch {
+      setError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -58,6 +70,11 @@ export default function ContactPage() {
             {sent && (
               <div className="success" role="status" aria-live="polite">
                 Tack, ditt meddelande är mottaget. Vi återkommer så snart vi kan.
+              </div>
+            )}
+            {error && (
+              <div className="error" role="alert">
+                Meddelandet kunde inte skickas just nu. Försök igen eller mejla oss direkt.
               </div>
             )}
             <label>
@@ -97,8 +114,8 @@ export default function ContactPage() {
                 onChange={(event) => updateField("message", event.target.value)}
               />
             </label>
-            <button className="button" type="submit">
-              Skicka meddelande
+            <button className="button" type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Skickar..." : "Skicka meddelande"}
             </button>
           </form>
         </div>

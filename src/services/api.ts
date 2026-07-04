@@ -1,6 +1,14 @@
-import type { ContactFormPayload, FutureIntegration } from "../types/content";
-
-const API_BASE_URL = "/api";
+import type {
+  Article,
+  ArticleInput,
+  ArticleSummary,
+  ContactFormPayload,
+  CurrentUser,
+  FutureIntegration,
+  UploadInitRequest,
+  UploadInitResponse
+} from "../types/content";
+import { apiRequest } from "./http";
 
 export const futureIntegrations: FutureIntegration[] = [
   { provider: "azure-functions", status: "planned", notes: "HTTP endpoints under /api." },
@@ -13,7 +21,47 @@ export const futureIntegrations: FutureIntegration[] = [
 ];
 
 export const submitContactForm = async (payload: ContactFormPayload) => {
-  // TODO: Koppla till Azure Function: POST `${API_BASE_URL}/contact`.
-  await Promise.resolve({ ok: true, payload, endpoint: `${API_BASE_URL}/contact` });
-  return { ok: true };
+  return apiRequest<{ ok: true }>("/contact", {
+    method: "POST",
+    body: payload
+  });
 };
+
+export const getCurrentUser = () => apiRequest<CurrentUser>("/admin/me");
+
+export const getArticles = (query?: string) => {
+  const search = query ? `?query=${encodeURIComponent(query)}` : "";
+  return apiRequest<ArticleSummary[]>(`/articles${search}`);
+};
+
+export const getArticleBySlug = (slug: string) => apiRequest<Article>(`/articles/${encodeURIComponent(slug)}`);
+
+export const getAdminArticles = () => apiRequest<ArticleSummary[]>("/admin/articles");
+
+export const createArticle = (payload: ArticleInput) =>
+  apiRequest<Article>("/admin/articles", {
+    method: "POST",
+    body: payload
+  });
+
+export const updateArticle = (id: string, payload: ArticleInput) =>
+  apiRequest<Article>(`/admin/articles/${encodeURIComponent(id)}`, {
+    method: "PUT",
+    body: payload
+  });
+
+export const deleteArticle = (id: string) =>
+  apiRequest<void>(`/admin/articles/${encodeURIComponent(id)}`, {
+    method: "DELETE"
+  });
+
+export const publishArticle = (id: string) =>
+  apiRequest<Article>(`/admin/articles/${encodeURIComponent(id)}/publish`, {
+    method: "POST"
+  });
+
+export const initImageUpload = (payload: UploadInitRequest) =>
+  apiRequest<UploadInitResponse>("/admin/upload/init", {
+    method: "POST",
+    body: payload
+  });

@@ -39,6 +39,53 @@ export interface ContactFormPayload {
   message: string;
 }
 
+export type ArticleStatus = "draft" | "published";
+
+export interface ArticleSummary {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  status: ArticleStatus;
+  publishedAt?: string;
+  updatedAt: string;
+  imageUrl?: string;
+  imageAlt?: string;
+}
+
+export interface Article extends ArticleSummary {
+  content: string;
+  authorName: string;
+}
+
+export interface ArticleInput {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  content: string;
+  imageUrl?: string;
+  imageAlt?: string;
+}
+
+export interface CurrentUser {
+  isAuthenticated: boolean;
+  name?: string;
+  roles: string[];
+}
+
+export interface UploadInitRequest {
+  fileName: string;
+  contentType: string;
+}
+
+export interface UploadInitResponse {
+  uploadUrl: string;
+  blobUrl: string;
+  imageId: string;
+}
+
 export interface FutureIntegration {
   provider: "azure-functions" | "sendgrid" | "cosmos-db" | "blob-storage" | "auth" | "admin" | "blog";
   status: "planned";

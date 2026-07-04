@@ -1,5 +1,5 @@
 import { company, SITE_NAME, SITE_URL } from "../data/site";
-import type { SeoConfig } from "../types/content";
+import type { Article, SeoConfig } from "../types/content";
 
 export const absoluteUrl = (path = "/") => new URL(path, SITE_URL).toString();
 
@@ -56,3 +56,22 @@ export const articleJsonLdTemplate = {
   author: { "@type": "Organization", name: company.name },
   publisher: { "@type": "Organization", name: company.name }
 };
+
+export const articleJsonLd = (article: Article) => ({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: article.title,
+  description: article.description,
+  image: article.imageUrl ? [article.imageUrl] : undefined,
+  datePublished: article.publishedAt,
+  dateModified: article.updatedAt,
+  author: {
+    "@type": "Organization",
+    name: article.authorName || company.name
+  },
+  publisher: {
+    "@type": "Organization",
+    name: company.name
+  },
+  mainEntityOfPage: absoluteUrl(`/artiklar/${article.slug}`)
+});
