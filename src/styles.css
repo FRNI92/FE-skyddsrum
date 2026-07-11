@@ -314,13 +314,13 @@ textarea {
 }
 
 .section--dark {
-  background: #11161c;
-  color: #fff;
+  background: #e8eef6;
+  color: var(--text);
 }
 
 .section--dark .section__header p,
 .section--dark .reason p {
-  color: rgba(226, 232, 240, 0.72);
+  color: var(--text-muted);
 }
 
 .section__header {
@@ -387,16 +387,25 @@ textarea {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1.5rem, 4vw, 4rem);
   margin-top: 4rem;
+  align-items: stretch;
 }
 
 .reason {
   display: grid;
+  grid-template-rows: 4.5rem auto 1fr;
   align-content: start;
   gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(154, 168, 184, 0.55);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
 }
 
 .reason span {
-  color: #7890cf;
+  display: flex;
+  align-items: flex-start;
+  color: var(--brand);
   font-size: clamp(3rem, 6vw, 4rem);
   font-weight: 900;
   line-height: 1;
@@ -404,7 +413,7 @@ textarea {
 
 .reason h3 {
   margin: 0;
-  color: #fff;
+  color: var(--text);
   font-size: 1rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -416,7 +425,7 @@ textarea {
 }
 
 .reason strong {
-  color: #fff;
+  color: var(--text);
   font-style: italic;
 }
 
