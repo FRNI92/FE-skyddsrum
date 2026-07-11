@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Hero } from "../components/sections/Hero";
 import { Seo } from "../components/layout/Seo";
 import { ServiceGrid } from "../components/sections/ServiceGrid";
@@ -17,16 +18,21 @@ export default function HomePage() {
       />
       <Hero />
       <ServiceGrid />
-      <section className="section section--muted">
+      <section className="section section--muted knowledge-section">
         <div className="container split">
           <div>
             <p className="eyebrow">Kunskap först</p>
             <h2>Tydliga beslut i en reglerad miljö</h2>
           </div>
-          <p>
-            Skyddsrum kräver struktur, dokumentation och praktisk förståelse. Vi gör det enklare att se
-            vad som är viktigt nu, vad som kan planeras och vilka frågor som behöver specialiststöd.
-          </p>
+          <div className="knowledge-section__body">
+            <p>
+              Skyddsrum kräver struktur, dokumentation och praktisk förståelse. Vi gör det enklare att se
+              vad som är viktigt nu, vad som kan planeras och vilka frågor som behöver specialiststöd.
+            </p>
+            <Link className="button" to="/vanliga-fragor">
+              Läs vanliga frågor
+            </Link>
+          </div>
         </div>
       </section>
       <section className="section section--dark" aria-labelledby="why-heading">
@@ -62,7 +68,9 @@ export default function HomePage() {
             </article>
           </div>
           <div className="section__header section__header--center contact-teaser">
-            <h2>Kontakta oss</h2>
+            <Link className="button contact-teaser__button" to="/kontakt">
+              Kontakta oss
+            </Link>
             <p>Har du några frågor om skyddsrum eller önskar en kostnadsfri offert?</p>
             <p>Tveka inte att kontakta oss, vi erbjuder alltid en timmes gratis konsultation.</p>
           </div>

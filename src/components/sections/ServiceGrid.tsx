@@ -7,8 +7,13 @@ export function ServiceGrid() {
       <div className="container">
         <div className="section__header">
           <p className="eyebrow">Tjänster</p>
-          <h2 id="services-heading">Stöd genom hela skyddsrumsarbetet</h2>
-          <p>Från första bedömning till tydlig åtgärdsplan och praktisk uppföljning.</p>
+          <h2 id="services-heading">Skyddsrumsarbetet</h2>
+          <p>
+            Vi erbjuder en helhetslösning för privata företag, föreningar och
+            myndigheter inom skyddsrum där vi stöttar er från början till slut.
+            Vårt fokus ligger på bra service och kvalité - vi är er långsiktiga
+            partner i skyddsrum
+          </p>
         </div>
         <div className="card-grid">
           {services.map((service) => (

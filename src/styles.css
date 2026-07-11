@@ -313,6 +313,27 @@ textarea {
   background: var(--surface-muted);
 }
 
+.knowledge-section {
+  border-bottom: 1px solid rgba(154, 168, 184, 0.42);
+}
+
+.knowledge-section .split {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(154, 168, 184, 0.38);
+  border-radius: 8px;
+}
+
+.knowledge-section__body {
+  display: grid;
+  justify-items: start;
+  gap: 1.25rem;
+}
+
+.knowledge-section__body p {
+  margin: 0;
+}
+
 .section--dark {
   background: #e8eef6;
   color: var(--text);
@@ -432,6 +453,10 @@ textarea {
 .contact-teaser {
   margin-top: 6rem;
   margin-bottom: 0;
+}
+
+.contact-teaser__button {
+  margin-bottom: 1rem;
 }
 
 .timeline {

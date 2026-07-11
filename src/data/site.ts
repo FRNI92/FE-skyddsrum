@@ -26,25 +26,25 @@ export const services: ServiceItem[] = [
   {
     id: "konsultation",
     title: "Konsultation",
-    description: "Rådgivning inför besiktning, åtgärdsplaner och kravställning för skyddsrum.",
+    description: "Vi stöttar er med vår expertis inom allt som gäller skyddsrum. Från en liten fråga till ett stort projekt.",
     href: "/tjanster#konsultation"
-  },
-  {
-    id: "besiktning",
-    title: "Besiktning",
-    description: "Genomgång av funktion, dokumentation, utrustning och brister inför kommande arbete.",
-    href: "/tjanster#besiktning"
   },
   {
     id: "utbildning",
     title: "Utbildning",
-    description: "Praktisk kunskap för fastighetsägare, styrelser och driftpersonal.",
+    description: "Vi utbildar i skyddsrumsunderhåll och iordningställande - så att ni är redo om krisen kommer.",
     href: "/tjanster#utbildning"
+  },
+  {
+    id: "besiktning",
+    title: "Besiktning",
+    description: "Vi genomför besiktningar och kontroller. Vår dokumentation är alltid tydlig och enkel att förstå. Den innehåller anmärkningar, bilder och förslag till åtgärder.",
+    href: "/tjanster#besiktning"
   },
   {
     id: "atgard",
     title: "Åtgärd",
-    description: "Planering och koordinering av prioriterade åtgärder efter besiktning.",
+    description: "Vi genomför alla typer av åtgärder i skyddsrum. Vi hjälper er från föreläggande till slutbesiktning.",
     href: "/tjanster#atgard"
   }
 ];
