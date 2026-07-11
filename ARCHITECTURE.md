@@ -4,9 +4,9 @@
 
 - Frontend: React/Vite i Azure Static Web Apps.
 - Backend: Azure Functions .NET 8 Isolated i separat repo.
-- Auth: Azure Static Web Apps Authentication.
-- Artiklar: Cosmos DB for NoSQL, helst med Free Tier aktiverat vid skapande.
-- Bilder: Azure Blob Storage.
+- Auth: behövs inte för frontend i nuläget.
+- Artiklar: valfritt framtida API, annars manuellt innehåll i repo.
+- Bilder: lokala assets i frontend, eventuellt Azure Blob Storage senare.
 - Kontaktformulär: Azure Function som skickar e-post via Azure Communication Services Email eller SendGrid.
 
 ## Viktigt om separata repositories
@@ -20,10 +20,9 @@ Om frontend och backend ligger i separata repos finns två praktiska val:
 2. Separat Azure Functions App.
    - Passar separata repos bättre.
    - Sätt `VITE_API_BASE_URL` i Static Web Apps till backendens URL.
-   - Backend måste själv validera autentisering och roller.
    - CORS måste tillåta Static Web Apps-domänen.
 
-För lägsta kostnad: börja med SWA Free, Cosmos DB Free Tier och Functions Consumption. Var noga med budget alerts i Azure.
+För lägsta kostnad: börja med SWA Free och Functions Consumption för kontaktformuläret. Var noga med budget alerts i Azure.
 
 ## Frontendstruktur
 
@@ -34,7 +33,6 @@ src/
   pages/
     ArticlesPage.tsx
     ArticlePage.tsx
-    AdminDashboardPage.tsx
   services/
     api.ts
     http.ts
@@ -49,13 +47,9 @@ Backend/
   Skyddsrum.Functions/
     Functions/
       ArticlesFunctions.cs
-      AdminArticlesFunctions.cs
-      UploadFunctions.cs
       ContactFunctions.cs
-      AuthFunctions.cs
     Services/
       ArticleService.cs
-      UploadService.cs
       EmailService.cs
     Repositories/
       ArticleRepository.cs
@@ -64,15 +58,7 @@ Backend/
       ImageAsset.cs
     DTOs/
       ArticleDto.cs
-      ArticleInputDto.cs
-      UploadInitDto.cs
       ContactFormDto.cs
-    Authentication/
-      CurrentUserReader.cs
-      AdminAuthorization.cs
-    Storage/
-      BlobStorageOptions.cs
-      BlobStorageService.cs
     Email/
       EmailOptions.cs
 ```
@@ -85,19 +71,6 @@ Publika:
 GET  /api/articles
 GET  /api/articles/{slug}
 POST /api/contact
-```
-
-Admin:
-
-```text
-GET    /api/admin/me
-GET    /api/admin/articles
-GET    /api/admin/articles/{id}
-POST   /api/admin/articles
-PUT    /api/admin/articles/{id}
-DELETE /api/admin/articles/{id}
-POST   /api/admin/articles/{id}/publish
-POST   /api/admin/upload/init
 ```
 
 ## Datamodell för artikel
@@ -117,21 +90,18 @@ publishedAt
 updatedAt
 ```
 
-## Blob Storage
+## Bilder och vanliga åtgärder
 
-Lagra bilder i en privat container och ladda upp via kortlivad SAS-url från backend. Spara bara metadata och publik bild-URL i Cosmos DB.
+Kunden skickar text och bilder till utvecklaren. Innehåll för vanliga åtgärder uppdateras manuellt i `src/data/actions.ts` och relevanta assets läggs i repo.
 
 Tänk på:
 
-- Kräv `contentType`.
-- Tillåt bara bildtyper som `image/jpeg`, `image/png`, `image/webp` och `image/avif`.
-- Sätt maxstorlek i backend.
-- Kräv alt-text innan publicering.
+- Komprimera bilder innan publicering.
+- Ange alt-text för varje bild.
+- Håll datafilen strukturerad så nya åtgärder kan läggas till utan sidrefaktor.
 
 ## Säkerhet
 
-- Lita inte på att `/admin` är dolt i frontend.
-- Kontrollera adminroll i varje admin-endpoint.
 - Validera all input i Functions.
 - Sanera artikelinnehåll innan render/publicering.
 - Lägg inga connection strings i frontend.

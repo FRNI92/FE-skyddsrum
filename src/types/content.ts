@@ -59,35 +59,8 @@ export interface Article extends ArticleSummary {
   authorName: string;
 }
 
-export interface ArticleInput {
-  slug: string;
-  title: string;
-  description: string;
-  category: string;
-  content: string;
-  imageUrl?: string;
-  imageAlt?: string;
-}
-
-export interface CurrentUser {
-  isAuthenticated: boolean;
-  name?: string;
-  roles: string[];
-}
-
-export interface UploadInitRequest {
-  fileName: string;
-  contentType: string;
-}
-
-export interface UploadInitResponse {
-  uploadUrl: string;
-  blobUrl: string;
-  imageId: string;
-}
-
 export interface FutureIntegration {
-  provider: "azure-functions" | "sendgrid" | "cosmos-db" | "blob-storage" | "auth" | "admin" | "blog";
+  provider: "azure-functions" | "sendgrid" | "blog";
   status: "planned";
   notes: string;
 }

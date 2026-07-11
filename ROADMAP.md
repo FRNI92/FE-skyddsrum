@@ -27,4 +27,4 @@
 - [ ] Skapa första blogg-/kunskapsartiklarna
 - [ ] Implementera Azure Function för kontaktformulär
 - [ ] Koppla SendGrid
-- [ ] Planera adminportal
+- [ ] Etablera rutin för manuella uppdateringar av vanliga åtgärder

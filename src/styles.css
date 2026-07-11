@@ -606,8 +606,7 @@ address {
   font-weight: 800;
 }
 
-.article-layout,
-.admin-layout {
+.article-layout {
   display: grid;
   gap: 1.5rem;
 }
@@ -646,8 +645,7 @@ address {
   gap: 1rem;
 }
 
-.article-card,
-.admin-panel {
+.article-card {
   display: grid;
   gap: 0.75rem;
   padding: 1.25rem;
@@ -657,20 +655,17 @@ address {
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
 }
 
-.article-card h2,
-.admin-panel h2 {
+.article-card h2 {
   margin: 0;
   font-size: clamp(1.35rem, 2vw, 2rem);
   line-height: 1.15;
 }
 
-.article-card p,
-.admin-panel p {
+.article-card p {
   margin: 0;
 }
 
-.article-card a,
-.admin-panel a:not(.button) {
+.article-card a {
   color: var(--brand-dark);
   font-weight: 800;
 }

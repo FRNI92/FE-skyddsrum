@@ -16,21 +16,15 @@ Den här V1.0-strukturen är byggd så att framtida funktioner kan läggas till 
 
 ## Cosmos DB
 
-- Flytta data från `src/data` till Cosmos DB när adminportalen finns.
-- Behåll typerna i `src/types` som kontrakt mellan frontend, Functions och admin.
-- Börja med collections för `pages`, `articles`, `services` och `leads`.
+- Använd bara Cosmos DB om publika artiklar eller leads senare behöver lagras via backend.
+- Behåll typerna i `src/types` som kontrakt mellan frontend och Functions.
+- För manuellt redaktionellt innehåll kan `src/data` fortsätta vara källan.
 
 ## Blob Storage
 
 - Lägg framtida bilder, dokument och nedladdningsbara filer i Blob Storage.
-- Spara metadata och alt-texter i Cosmos DB.
-- Byt lokala bildimporter mot URL:er från en content service.
-
-## Adminportal
-
-- Skapa en separat route-grupp under `/admin`.
-- Skydda admin med autentisering innan routes laddas.
-- Återanvänd samma content-interfaces som publika webbplatsen.
+- Spara metadata och alt-texter tillsammans med det manuellt uppdaterade innehållet.
+- Byt lokala bildimporter mot URL:er från en content service först när behovet finns.
 
 ## Bloggsystem
 
@@ -44,8 +38,8 @@ Den här V1.0-strukturen är byggd så att framtida funktioner kan läggas till 
 - Servera WebP/AVIF där det är möjligt.
 - Använd Blob Storage plus CDN när trafiken ökar.
 
-## Autentisering
+## Innehållsflöde
 
-- Börja med Microsoft Entra ID eller Azure Static Web Apps Authentication.
-- Skilj publika routes från admin-routes.
-- Lägg roller för admin, editor och viewer.
+- Kunden skickar text och bilder för nya vanliga åtgärder.
+- Uppdatera `src/data/actions.ts` och relevanta assets manuellt.
+- Kör build och publicera när innehållet är granskat.

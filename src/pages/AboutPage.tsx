@@ -30,8 +30,8 @@ export default function AboutPage() {
         <div className="container split">
           <h2>Byggt för långsiktig förvaltning</h2>
           <p>
-            Vårt arbetssätt är gjort för att kunna växa med framtida adminportal, kunskapsbank och
-            datadrivet innehåll utan att den publika webbplatsen behöver byggas om från början.
+            Vårt arbetssätt är gjort för tydlig rådgivning, praktisk uppföljning och innehåll som kan
+            uppdateras när nya frågor, bilder eller åtgärder behöver lyftas fram.
           </p>
         </div>
       </section>
