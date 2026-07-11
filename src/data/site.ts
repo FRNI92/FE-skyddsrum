@@ -16,7 +16,7 @@ export const company = {
 export const navigation = [
   { label: "Hem", href: "/" },
   { label: "Tjänster", href: "/tjanster" },
-  { label: "Artiklar", href: "/artiklar" },
+  { label: "Vanliga frågor", href: "/vanliga-fragor" },
   { label: "Vanliga åtgärder", href: "/vanliga-atgarder" },
   { label: "Om oss", href: "/om-oss" },
   { label: "Kontakta oss", href: "/kontakt" }

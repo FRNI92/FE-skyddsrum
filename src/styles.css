@@ -136,29 +136,16 @@ textarea {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
   color: var(--text);
   font-weight: 800;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-.brand__mark {
-  width: 30px;
-  height: 30px;
-  background: var(--accent);
-  border-radius: 4px;
-  position: relative;
-}
-
-.brand__mark::after {
-  content: "";
-  position: absolute;
-  left: 7px;
-  top: 6px;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 16px solid #0f172a;
+.brand__logo {
+  width: 190px;
+  max-height: 46px;
+  object-fit: contain;
 }
 
 .nav__links {
@@ -326,9 +313,24 @@ textarea {
   background: var(--surface-muted);
 }
 
+.section--dark {
+  background: #11161c;
+  color: #fff;
+}
+
+.section--dark .section__header p,
+.section--dark .reason p {
+  color: rgba(226, 232, 240, 0.72);
+}
+
 .section__header {
   max-width: 720px;
   margin-bottom: 2rem;
+}
+
+.section__header--center {
+  margin-inline: auto;
+  text-align: center;
 }
 
 .section__header h2,
@@ -367,11 +369,60 @@ textarea {
   font-weight: 800;
 }
 
+.section__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 .split {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 2rem;
   align-items: start;
+}
+
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 4rem);
+  margin-top: 4rem;
+}
+
+.reason {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
+.reason span {
+  color: #7890cf;
+  font-size: clamp(3rem, 6vw, 4rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.reason h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.reason p {
+  margin: 0;
+  font-size: 1.04rem;
+}
+
+.reason strong {
+  color: #fff;
+  font-style: italic;
+}
+
+.contact-teaser {
+  margin-top: 6rem;
+  margin-bottom: 0;
 }
 
 .timeline {
@@ -611,6 +662,40 @@ address {
   gap: 0.5rem;
 }
 
+.brand__logo--footer {
+  width: 210px;
+}
+
+.footer__copyright {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(226, 232, 240, 0.18);
+  color: rgba(226, 232, 240, 0.72);
+  font-size: 0.92rem;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.faq-item h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.faq-item p {
+  margin: 0;
+}
+
 .loading {
   min-height: 60vh;
   display: grid;
@@ -678,6 +763,7 @@ address {
   }
 
   .card-grid,
+  .reason-grid,
   .split,
   .timeline article,
   .action-section,
@@ -695,6 +781,10 @@ address {
 
   .brand span:last-child {
     font-size: 0.86rem;
+  }
+
+  .brand__logo {
+    width: 148px;
   }
 
   .topbar {

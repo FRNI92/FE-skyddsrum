@@ -11,6 +11,7 @@ const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 const ActionsPage = lazy(() => import("./pages/ActionsPage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
+const FaqPage = lazy(() => import("./pages/FaqPage"));
 const ArticlesPage = lazy(() => import("./pages/ArticlesPage"));
 const ArticlePage = lazy(() => import("./pages/ArticlePage"));
 const AdminDashboardPage = lazy(() => import("./pages/AdminDashboardPage"));
@@ -26,6 +27,7 @@ createRoot(document.getElementById("root")!).render(
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="tjanster" element={<ServicesPage />} />
+            <Route path="vanliga-fragor" element={<FaqPage />} />
             <Route path="artiklar" element={<ArticlesPage />} />
             <Route path="artiklar/:slug" element={<ArticlePage />} />
             <Route path="vanliga-atgarder" element={<ActionsPage />} />

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { NavLink, Link } from "react-router-dom";
 import { company, navigation } from "../../data/site";
 import { useScrollDirection } from "../../hooks/useScrollDirection";
+import logo from "../../assets/Logga/svart_text_transparent_logga.png";
 
 export function Navigation() {
   const { isHidden, isScrolled } = useScrollDirection();
@@ -32,8 +33,7 @@ export function Navigation() {
       </div>
       <div className="container nav">
         <Link className="brand" to="/" aria-label="Skyddsrumsgruppen startsida">
-          <span className="brand__mark" aria-hidden="true" />
-          <span>Skyddsrumsgruppen</span>
+          <img className="brand__logo" src={logo} alt="Skyddsrumsgruppen" />
         </Link>
         <button
           className="nav__toggle"

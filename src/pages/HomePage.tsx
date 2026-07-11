@@ -29,6 +29,45 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+      <section className="section section--dark" aria-labelledby="why-heading">
+        <div className="container">
+          <div className="section__header section__header--center">
+            <h2 id="why-heading">Varför välja oss?</h2>
+            <p>Skyddsrumsgruppen erbjuder expertis, erfarenhet och fokus på kundens behov.</p>
+          </div>
+          <div className="reason-grid">
+            <article className="reason">
+              <span>01.</span>
+              <h3>Erfarenhet och kunskap</h3>
+              <p>
+                Hos oss finns sakkunniga med både allmän och kvalificerad behörighet med lång erfarenhet
+                inom skyddsrum. <strong>Vi kan skyddsrum.</strong>
+              </p>
+            </article>
+            <article className="reason">
+              <span>02.</span>
+              <h3>Kundfokus</h3>
+              <p>
+                Vi lägger stort fokus på våra kunder och deras behov, därför anpassar vi oss utifrån era
+                önskemål och resurser. <strong>För hos oss är ni inte en i mängden.</strong>
+              </p>
+            </article>
+            <article className="reason">
+              <span>03.</span>
+              <h3>Kvalité</h3>
+              <p>
+                Vi lägger stort fokus på kvalité och kan därför ge garantier på genomfört arbete och
+                serviceavtal. <strong>Vi är stolta över vårt arbete.</strong>
+              </p>
+            </article>
+          </div>
+          <div className="section__header section__header--center contact-teaser">
+            <h2>Kontakta oss</h2>
+            <p>Har du några frågor om skyddsrum eller önskar en kostnadsfri offert?</p>
+            <p>Tveka inte att kontakta oss, vi erbjuder alltid en timmes gratis konsultation.</p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

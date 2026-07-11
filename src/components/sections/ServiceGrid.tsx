@@ -15,9 +15,13 @@ export function ServiceGrid() {
             <article className="card" id={service.id} key={service.id}>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <Link to={service.href}>Läs mer om {service.title.toLowerCase()}</Link>
             </article>
           ))}
+        </div>
+        <div className="section__actions">
+          <Link className="button" to="/tjanster">
+            Läs mer om våra tjänster
+          </Link>
         </div>
       </div>
     </section>
