@@ -480,6 +480,61 @@ textarea {
   margin-bottom: 1rem;
 }
 
+.services-showcase {
+  background: #12171d;
+  color: #fff;
+}
+
+.services-showcase__header {
+  max-width: 760px;
+}
+
+.services-showcase__header h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.35rem, 5vw, 3.45rem);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.services-showcase__header p {
+  color: rgba(226, 232, 240, 0.7);
+  font-size: 1.08rem;
+}
+
+.inspection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin-top: 3rem;
+}
+
+.inspection-card {
+  display: grid;
+  align-content: start;
+  gap: 1.15rem;
+}
+
+.inspection-card img {
+  width: 100%;
+  aspect-ratio: 1.18;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.inspection-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.inspection-card p {
+  margin: 0;
+  color: rgba(226, 232, 240, 0.68);
+}
+
 .timeline {
   display: grid;
   gap: 1rem;
@@ -815,6 +870,7 @@ address {
 
   .card-grid,
   .reason-grid,
+  .inspection-grid,
   .split,
   .timeline article,
   .action-section,
