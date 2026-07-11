@@ -663,7 +663,8 @@ address {
 }
 
 .brand__logo--footer {
-  width: 210px;
+  width: clamp(270px, 28vw, 360px);
+  max-height: none;
 }
 
 .footer__copyright {
@@ -785,6 +786,10 @@ address {
 
   .brand__logo {
     width: 148px;
+  }
+
+  .brand__logo--footer {
+    width: min(100%, 280px);
   }
 
   .topbar {
