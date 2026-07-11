@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { services } from "../../data/site";
 
-export function ServiceGrid() {
+type ServiceGridProps = {
+  mobileDropdown?: boolean;
+};
+
+export function ServiceGrid({ mobileDropdown = false }: ServiceGridProps) {
+  const [openServiceId, setOpenServiceId] = useState(services[0]?.id ?? "");
+
   return (
     <section className="section" aria-labelledby="services-heading">
       <div className="container">
@@ -15,11 +22,38 @@ export function ServiceGrid() {
             partner i skyddsrum
           </p>
         </div>
-        <div className="card-grid">
+        <div className={`card-grid ${mobileDropdown ? "card-grid--mobile-dropdown" : ""}`}>
           {services.map((service) => (
             <article className="card" id={service.id} key={service.id}>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
+              {mobileDropdown ? (
+                <>
+                  <h3 className="card__title">{service.title}</h3>
+                  <button
+                    className="card__toggle"
+                    type="button"
+                    aria-expanded={openServiceId === service.id}
+                    aria-controls={`${service.id}-description`}
+                    onClick={() =>
+                      setOpenServiceId((current) => (current === service.id ? "" : service.id))
+                    }
+                  >
+                    <span>{service.title}</span>
+                    <span aria-hidden="true" />
+                  </button>
+                  <p
+                    className="card__content"
+                    id={`${service.id}-description`}
+                    data-open={openServiceId === service.id}
+                  >
+                    {service.description}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </>
+              )}
             </article>
           ))}
         </div>

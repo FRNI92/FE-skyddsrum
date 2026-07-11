@@ -17,7 +17,7 @@ export default function HomePage() {
         jsonLd={[organizationJsonLd, localBusinessJsonLd, websiteJsonLd]}
       />
       <Hero />
-      <ServiceGrid />
+      <ServiceGrid mobileDropdown />
       <section className="section section--muted knowledge-section">
         <div className="container split">
           <div>
