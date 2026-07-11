@@ -17,7 +17,10 @@ export function Hero() {
         <p className="eyebrow">
           Konsultation · Utbildning · Besiktning · Åtgärd
         </p>
-        <h1>Vi kan skyddsrum</h1>
+        <h1>
+          Vi kan
+          <span>Skyddsrum</span>
+        </h1>
         <p className="hero__lead">
           Skyddsrumsgruppen hjälper fastighetsägare, bostadsrättsföreningar och
           förvaltare att förstå, prioritera och genomföra rätt åtgärder.

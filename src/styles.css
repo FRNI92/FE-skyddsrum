@@ -267,9 +267,18 @@ textarea {
 .page-hero h1 {
   max-width: 780px;
   margin: 0;
-  font-size: clamp(2.6rem, 3vw, 3rem);
+  font-size: clamp(2.25rem, 3vw, 2.75rem);
   line-height: 0.98;
   text-transform: uppercase;
+}
+
+.hero .hero__content h1 {
+  font-weight: 500;
+}
+
+.hero h1 span {
+  display: block;
+  margin-top: 0.18em;
 }
 
 .hero__lead,
@@ -909,7 +918,7 @@ address {
   }
 
   .hero h1 {
-    font-size: clamp(2.25rem, 12vw, 3rem);
+    font-size: clamp(2rem, 10vw, 2.65rem);
   }
 
   .hero__lead {
