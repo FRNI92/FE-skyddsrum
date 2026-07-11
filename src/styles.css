@@ -485,6 +485,15 @@ textarea {
   color: #fff;
 }
 
+.services-showcase--continued {
+  padding-top: 0;
+}
+
+.services-showcase--continued .container {
+  padding-top: 5rem;
+  border-top: 1px solid rgba(226, 232, 240, 0.12);
+}
+
 .services-showcase__header {
   max-width: 760px;
 }
@@ -965,5 +974,9 @@ address {
   .section,
   .page-hero {
     padding-block: 3.5rem;
+  }
+
+  .services-showcase--continued .container {
+    padding-top: 3.5rem;
   }
 }
