@@ -535,24 +535,6 @@ textarea {
   color: rgba(226, 232, 240, 0.68);
 }
 
-.timeline {
-  display: grid;
-  gap: 1rem;
-}
-
-.timeline article {
-  display: grid;
-  grid-template-columns: 4rem 0.6fr 1fr;
-  gap: 1rem;
-  padding-block: 1.25rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.timeline span {
-  color: var(--accent);
-  font-weight: 900;
-}
-
 .action-list {
   display: grid;
   gap: 1.25rem;
@@ -872,7 +854,6 @@ address {
   .reason-grid,
   .inspection-grid,
   .split,
-  .timeline article,
   .action-section,
   .contact-grid,
   .search-form,

@@ -1,9 +1,7 @@
 import { Seo } from "../components/layout/Seo";
-import { ServiceGrid } from "../components/sections/ServiceGrid";
 import skyddsrumskontrollImage from "../assets/Tjänster/skyddsrumskontroll.jpg";
 import skyddsrumsstatusImage from "../assets/Tjänster/skyddsrumsstatus.jpg";
 import skyddsrumstillsynImage from "../assets/Tjänster/skyddsrumstillsyn.jpg";
-import { services } from "../data/site";
 import { pageSeo } from "../utils/seo";
 
 const inspectionServices = [
@@ -48,7 +46,6 @@ export default function ServicesPage() {
           <p>Välj rätt nivå av stöd utifrån fastighetens nuläge, dokumentation och kommande behov.</p>
         </div>
       </section>
-      <ServiceGrid />
       <section className="section services-showcase" aria-labelledby="inspections-heading">
         <div className="container">
           <div className="section__header section__header--center services-showcase__header">
@@ -68,17 +65,6 @@ export default function ServicesPage() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-      <section className="section section--muted">
-        <div className="container timeline">
-          {services.map((service, index) => (
-            <article key={service.id}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h2>{service.title}</h2>
-              <p>{service.description}</p>
-            </article>
-          ))}
         </div>
       </section>
     </>

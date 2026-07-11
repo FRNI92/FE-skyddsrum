@@ -4,9 +4,10 @@ import { services } from "../../data/site";
 
 type ServiceGridProps = {
   mobileDropdown?: boolean;
+  showReadMoreButton?: boolean;
 };
 
-export function ServiceGrid({ mobileDropdown = false }: ServiceGridProps) {
+export function ServiceGrid({ mobileDropdown = false, showReadMoreButton = true }: ServiceGridProps) {
   const [openServiceId, setOpenServiceId] = useState(services[0]?.id ?? "");
 
   return (
@@ -57,11 +58,13 @@ export function ServiceGrid({ mobileDropdown = false }: ServiceGridProps) {
             </article>
           ))}
         </div>
-        <div className="section__actions">
-          <Link className="button" to="/tjanster">
-            Läs mer om våra tjänster
-          </Link>
-        </div>
+        {showReadMoreButton && (
+          <div className="section__actions">
+            <Link className="button" to="/tjanster">
+              Läs mer om våra tjänster
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
