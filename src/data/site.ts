@@ -8,8 +8,8 @@ export const company = {
   name: "Skyddsrumsgruppen",
   legalName: "Skyddsrumsgruppen",
   email: "info@skyddsrumsgruppen.se",
-  phone: "+46 70 000 00 00",
-  address: "Stockholm, Sverige",
+  phone: "+46 (0) 768 406 700",
+  address: "Örebro, Sverige",
   areaServed: "Sverige"
 };
 
