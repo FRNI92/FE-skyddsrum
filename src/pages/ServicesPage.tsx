@@ -5,6 +5,9 @@ import skyddsrumskontrollImage from "../assets/Tjänster/skyddsrumskontroll.jpg"
 import skyddsrumsstatusImage from "../assets/Tjänster/skyddsrumsstatus.jpg";
 import skyddsrumstillsynImage from "../assets/Tjänster/skyddsrumstillsyn.jpg";
 import overlatelseImage from "../assets/Tjänster/ÖVERLÅTELSEBESIKTNING.jpg";
+import serviceochunderhallImage from "../assets/Tjänster/serviceochunderhall.jpg";
+import skyddsrumfunktionImage from "../assets/Tjänster/skyddsrumsfunktion.jpg";
+import kostnadseffektiviseringImage from "../assets/Tjänster/kostnadseffektivisering.jpg";
 import { pageSeo } from "../utils/seo";
 
 const inspectionServices = [
@@ -55,6 +58,26 @@ const planningServices = [
   }
 ];
 
+const educationServices = [
+  {
+    title: "Service och underhåll",
+    description:"Har ni själva möjlighet att ansvara för det årliga underhållet? Vi utbildar er i underhållet av skyddsrum, där vi går igenom allt ifrån rostskyddsbehandlingar till oljebyte i ventilationsaggregaten. I utbildningen ingår även en årlig checklista och instruktioner för samtliga servicepunkter.",
+   image: serviceochunderhallImage,
+   imageAlt: "rostig brunn i skyddsrum" 
+  },
+  {
+    title: "Skyddsrumsfunktion",
+    description: "Här går vi igenom skyddsrummet i stort. Vad man behöver tänka på som fastighetsägaren och och hur ett iordningställande funkar. Vad ska monteras ner och vart ska torrklossetterna stå?",
+    image: skyddsrumfunktionImage,
+    imageAlt: "nödutgångsstege i skyddsrum"
+  },
+  {
+    title: "Att kostnadseffektivisera sitt skyddsrum",
+    description: "Här går vi igenom vilket ansvar fastighetsägaren har och hur man kan undvika dyra utgifter. Vi går bland annat igenom freds- och krigsinventering, vad som omfattas av certifieringskrav, nymoderniseringar som bekostas av MSB, hur en myndighetsbesiktning går till. ", 
+    image: kostnadseffektiviseringImage,
+    imageAlt: "kostnadseffektivisering av skyddsrum"
+  }
+];
 export default function ServicesPage() {
   return (
     <>
