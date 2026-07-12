@@ -5,9 +5,9 @@ import skyddsrumskontrollImage from "../assets/Tjänster/skyddsrumskontroll.jpg"
 import skyddsrumsstatusImage from "../assets/Tjänster/skyddsrumsstatus.jpg";
 import skyddsrumstillsynImage from "../assets/Tjänster/skyddsrumstillsyn.jpg";
 import overlatelseImage from "../assets/Tjänster/ÖVERLÅTELSEBESIKTNING.jpg";
-import serviceochunderhallImage from "../assets/Tjänster/serviceochunderhall.jpg";
-import skyddsrumfunktionImage from "../assets/Tjänster/skyddsrumsfunktion.jpg";
-import kostnadseffektiviseringImage from "../assets/Tjänster/kostnadseffektivisering.jpg";
+import serviceochunderhallImage from "../assets/Tjänster/serviceochunderhåll.jpg";
+import skyddsrumfunktionImage from "../assets/Tjänster/Skyddsrumsfunktion.jpg";
+import kostnadseffektiviseringImage from "../assets/Tjänster/Attkostnadseffektivierasittskyddsru.jpg";
 import { pageSeo } from "../utils/seo";
 
 const inspectionServices = [
@@ -102,6 +102,7 @@ export default function ServicesPage() {
       <section
         className="section services-showcase"
         aria-labelledby="inspections-heading"
+        id="besiktning"
       >
         <div className="container">
           <div className="section__header section__header--center services-showcase__header">
@@ -127,9 +128,52 @@ export default function ServicesPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section
+        className="section services-showcase services-showcase--continued"
+        aria-labelledby="planning-heading"
+        id="konsultation"
+      >
         <div className="container">
+          <div className="section__header section__header--center services-showcase__header">
+            <h2 id="planning-heading">Konsultation och planering</h2>
+            <p>
+              Förarbete och dokumentation som ger er kontroll över skyddsrummets
+              nuläge inför åtgärder, ägarbyte eller framtida beslut.
+            </p>
+          </div>
           <div className="inspection-grid">
             {planningServices.map((service) => (
+              <article className="inspection-card" key={service.title}>
+                <img
+                  src={service.image}
+                  alt={service.imageAlt}
+                  loading="lazy"
+                />
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="section services-showcase services-showcase--continued"
+        aria-labelledby="education-heading"
+        id="utbildning"
+      >
+        <div className="container">
+          <div className="section__header section__header--center services-showcase__header">
+            <h2 id="education-heading">Utbildning</h2>
+            <p>
+              Praktiska utbildningar för fastighetsägare och driftansvariga som
+              vill förebygga fel, spara kostnader och säkra rätt underhåll.
+            </p>
+          </div>
+          <div className="inspection-grid">
+            {educationServices.map((service) => (
               <article className="inspection-card" key={service.title}>
                 <img
                   src={service.image}
