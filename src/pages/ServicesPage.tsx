@@ -8,6 +8,7 @@ import overlatelseImage from "../assets/Tjänster/ÖVERLÅTELSEBESIKTNING.jpg";
 import serviceochunderhallImage from "../assets/Tjänster/serviceochunderhåll.jpg";
 import skyddsrumfunktionImage from "../assets/Tjänster/Skyddsrumsfunktion.jpg";
 import kostnadseffektiviseringImage from "../assets/Tjänster/Attkostnadseffektivierasittskyddsru.jpg";
+import atgarderiskyddsrumImage from "../assets/Tjänster/Åtgärderiskyddsrum.jpg";
 import { pageSeo } from "../utils/seo";
 
 const inspectionServices = [
@@ -28,7 +29,7 @@ const inspectionServices = [
   {
     title: "Skyddsrumstillsyn",
     description:
-      "Detta är den besiktning där man endast kontrollerar specifika punkter i skyddsrummet utifrån behov, tidigare anmärkningar eller planerade åtgärder.",
+      "Detta är den besiktning där man endast kontrollerar sspecifika punkter i skyddsrummet utifrån behov, tidigare anmärkningar eller planerade åtgärder.",
     image: skyddsrumstillsynImage,
     imageAlt: "Skyddsrumsdörr med ventilation och skyddsrumsskylt",
   },
@@ -76,6 +77,27 @@ const educationServices = [
     description: "Här går vi igenom vilket ansvar fastighetsägaren har och hur man kan undvika dyra utgifter. Vi går bland annat igenom freds- och krigsinventering, vad som omfattas av certifieringskrav, nymoderniseringar som bekostas av MSB, hur en myndighetsbesiktning går till. ", 
     image: kostnadseffektiviseringImage,
     imageAlt: "kostnadseffektivisering av skyddsrum"
+  }
+];
+
+const measuresServices = [
+  {
+    title: "Åtgärder i skyddsrum",
+    description: "Vi stöttar er med ert föreläggande efter en myndighetsbesiktning. Välj en entreprenör som har kunskapen, kompetensen, rätt behörighet och kundfokus. Vi hjälper er i hela processen!",
+    image: atgarderiskyddsrumImage,
+    imageAlt: "Åtgärder i skyddsrum"
+  },
+    {
+    title: "Service & Underhåll",
+    description: "Vill ni att vi skall sköta det årliga underhållet av ert skyddsrum? Med vårt service- och underhållsavtal så slipper ni fundera på underhållet, vi sköter det! Vi lämnar även två års garanti på vårt serviceavtal.",
+    image: serviceochunderhallImage,
+    imageAlt: "Service och underhåll av skyddsrum"
+  },
+    {
+    title: "Konsultation",
+    description: "Vi erbjuder åtgärdsstöd för fastighetsägare och förvaltare som vill åtgärda brister i skyddsrum. Vi kan hjälpa till med allt ifrån att ta fram en åtgärdsplan, ansöka om bidrag, ta fram ritningar och dokumentation samt att genomföra själva åtgärden.",
+    image: atgarderiskyddsrumImage,
+    imageAlt: "Åtgärder i skyddsrum"
   }
 ];
 export default function ServicesPage() {
