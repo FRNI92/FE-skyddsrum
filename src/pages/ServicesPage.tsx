@@ -8,7 +8,7 @@ import overlatelseImage from "../assets/Tjänster/ÖVERLÅTELSEBESIKTNING.jpg";
 import serviceochunderhallImage from "../assets/Tjänster/serviceochunderhåll.jpg";
 import skyddsrumfunktionImage from "../assets/Tjänster/Skyddsrumsfunktion.jpg";
 import kostnadseffektiviseringImage from "../assets/Tjänster/Attkostnadseffektivierasittskyddsru.jpg";
-import atgarderiskyddsrumImage from "../assets/Tjänster/Åtgärderiskyddsrum.jpg";
+import atgarderiskyddsrumImage from "../assets/Tjänster/åtgärderiskyddsrum.jpg";
 import konsultserviceochunderhallImage from "../assets/Tjänster/konsult_serviceochunderhåll.jpg";
 import konsultationImage from "../assets/Tjänster/konsultation.jpg";
 import { pageSeo } from "../utils/seo";
@@ -105,7 +105,7 @@ const measuresServices = [
     description:
       "Vi erbjuder åtgärdsstöd för fastighetsägare och förvaltare som vill åtgärda brister i skyddsrum. Vi kan hjälpa till med allt ifrån att ta fram en åtgärdsplan, ansöka om bidrag, ta fram ritningar och dokumentation samt att genomföra själva åtgärden.",
     image: konsultationImage,
-    imageAlt: "Åtgärder i skyddsrum",
+    imageAlt: "Mätning av en detalj i ett skyddsrum",
   },
 ];
 export default function ServicesPage() {
@@ -225,13 +225,13 @@ export default function ServicesPage() {
       >
         <div className="container">
           <div className="section__header section__header--center services-showcase__header">
-            <h2 id="measures-heading">åtgärder i skyddsrum</h2>
+            <h2 id="measures-heading">Åtgärder i skyddsrum</h2>
             <p>
               Att genomföra åtgärder i skyddsrum kräver kunskap. Vi följer
               alltid MSB:s typlösningar på åtgärder. Tillsammans med våra
               kvalificerade sakkunniga utfärdar vi även intyg på de åtgärder som
               genomförs och stöttar er både innan och efter en
-              mydighetsbesiktning.
+              myndighetsbesiktning.
             </p>
           </div>
           <div className="inspection-grid">
