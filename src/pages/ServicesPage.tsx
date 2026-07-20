@@ -9,8 +9,8 @@ import serviceochunderhallImage from "../assets/Tjänster/serviceochunderhåll.j
 import skyddsrumfunktionImage from "../assets/Tjänster/Skyddsrumsfunktion.jpg";
 import kostnadseffektiviseringImage from "../assets/Tjänster/Attkostnadseffektivierasittskyddsru.jpg";
 import atgarderiskyddsrumImage from "../assets/Tjänster/Åtgärderiskyddsrum.jpg";
-import konsultserviceochunderhallImage from "../assets/Tjänster/konsultserviceochunderhåll.jpg";
-import konsultatio from "../assets/Tjänster/konsultation.jpg";
+import konsultserviceochunderhallImage from "../assets/Tjänster/konsult_serviceochunderhåll.jpg";
+import konsultationImage from "../assets/Tjänster/konsultation.jpg";
 import { pageSeo } from "../utils/seo";
 
 const inspectionServices = [
@@ -104,7 +104,7 @@ const measuresServices = [
     title: "Konsultation",
     description:
       "Vi erbjuder åtgärdsstöd för fastighetsägare och förvaltare som vill åtgärda brister i skyddsrum. Vi kan hjälpa till med allt ifrån att ta fram en åtgärdsplan, ansöka om bidrag, ta fram ritningar och dokumentation samt att genomföra själva åtgärden.",
-    image: konsultatio,
+    image: konsultationImage,
     imageAlt: "Åtgärder i skyddsrum",
   },
 ];
