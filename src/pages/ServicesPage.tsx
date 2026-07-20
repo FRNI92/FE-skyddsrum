@@ -9,6 +9,8 @@ import serviceochunderhallImage from "../assets/Tjänster/serviceochunderhåll.j
 import skyddsrumfunktionImage from "../assets/Tjänster/Skyddsrumsfunktion.jpg";
 import kostnadseffektiviseringImage from "../assets/Tjänster/Attkostnadseffektivierasittskyddsru.jpg";
 import atgarderiskyddsrumImage from "../assets/Tjänster/Åtgärderiskyddsrum.jpg";
+import konsultserviceochunderhallImage from "../assets/Tjänster/konsultserviceochunderhåll.jpg";
+import konsultatio from "../assets/Tjänster/konsultation.jpg";
 import { pageSeo } from "../utils/seo";
 
 const inspectionServices = [
@@ -95,14 +97,14 @@ const measuresServices = [
     title: "Service & Underhåll",
     description:
       "Vill ni att vi skall sköta det årliga underhållet av ert skyddsrum? Med vårt service- och underhållsavtal så slipper ni fundera på underhållet, vi sköter det! Vi lämnar även två års garanti på vårt serviceavtal.",
-    image: serviceochunderhallImage,
+    image: konsultserviceochunderhallImage,
     imageAlt: "Service och underhåll av skyddsrum",
   },
   {
     title: "Konsultation",
     description:
       "Vi erbjuder åtgärdsstöd för fastighetsägare och förvaltare som vill åtgärda brister i skyddsrum. Vi kan hjälpa till med allt ifrån att ta fram en åtgärdsplan, ansöka om bidrag, ta fram ritningar och dokumentation samt att genomföra själva åtgärden.",
-    image: atgarderiskyddsrumImage,
+    image: konsultatio,
     imageAlt: "Åtgärder i skyddsrum",
   },
 ];
