@@ -527,9 +527,20 @@ textarea {
 
 .inspection-card img {
   width: 100%;
-  aspect-ratio: 1.18;
+  height: clamp(210px, 18vw, 250px);
   object-fit: cover;
+  object-position: center;
   border-radius: 4px;
+}
+
+.responsive-image {
+  display: block;
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.responsive-image--loaded {
+  opacity: 1;
 }
 
 .inspection-card h3 {
@@ -566,6 +577,19 @@ textarea {
     linear-gradient(135deg, rgba(21, 79, 159, 0.18), rgba(216, 95, 36, 0.16)),
     repeating-linear-gradient(90deg, #d9e2ec, #d9e2ec 12px, #edf2f7 12px, #edf2f7 24px);
   position: relative;
+}
+
+.action-section__image--photo {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .responsive-image {
+    transition: none;
+  }
 }
 
 .action-section__image span {
@@ -946,6 +970,10 @@ address {
   .search-form,
   .footer__grid {
     grid-template-columns: 1fr;
+  }
+
+  .inspection-card img {
+    height: min(72vw, 360px);
   }
 
   .card-grid--mobile-dropdown {

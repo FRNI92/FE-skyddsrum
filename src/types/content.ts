@@ -21,6 +21,7 @@ export interface ActionSectionData {
   title: string;
   description: string;
   imageAlt: string;
+  image?: string;
   ctaLabel: string;
   ctaHref: string;
   relatedServiceIds: string[];
