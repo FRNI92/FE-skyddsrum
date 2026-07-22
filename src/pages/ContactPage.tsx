@@ -66,7 +66,7 @@ export default function ContactPage() {
               <span>{company.address}</span>
             </address>
           </aside>
-          <form className="contact-form" onSubmit={onSubmit}>
+          <form id="kontaktformular" className="contact-form" onSubmit={onSubmit}>
             {sent && (
               <div className="success" role="status" aria-live="polite">
                 Tack, ditt meddelande är mottaget. Vi återkommer så snart vi kan.
