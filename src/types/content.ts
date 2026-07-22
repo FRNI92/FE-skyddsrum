@@ -19,12 +19,13 @@ export interface ServiceItem {
 export interface ActionSectionData {
   id: string;
   title: string;
+  subtitle: string;
   description: string;
-  imageAlt: string;
-  image?: string;
-  ctaLabel: string;
-  ctaHref: string;
-  relatedServiceIds: string[];
+  images: Array<{
+    src: string;
+    alt: string;
+    label?: string;
+  }>;
 }
 
 export interface FeatureCard {

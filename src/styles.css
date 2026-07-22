@@ -557,68 +557,141 @@ textarea {
 
 .action-list {
   display: grid;
-  gap: 1.25rem;
+  gap: 2rem;
+}
+
+.actions-page {
+  background: #eef3f8;
 }
 
 .action-section {
   display: grid;
-  grid-template-columns: minmax(220px, 0.72fr) 1fr;
-  gap: 1.5rem;
-  padding: 1.25rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  min-height: 420px;
+  overflow: hidden;
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border: 1px solid #d8e1eb;
+  border-radius: 12px;
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.07);
 }
 
-.action-section__image {
-  min-height: 260px;
-  border-radius: 6px;
-  background:
-    linear-gradient(135deg, rgba(21, 79, 159, 0.18), rgba(216, 95, 36, 0.16)),
-    repeating-linear-gradient(90deg, #d9e2ec, #d9e2ec 12px, #edf2f7 12px, #edf2f7 24px);
+.action-section:nth-child(even) {
+  grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.15fr);
+}
+
+.action-section:nth-child(even) .action-gallery {
+  order: 2;
+}
+
+.action-section:nth-child(even) .action-section__body {
+  order: 1;
+}
+
+.action-gallery {
+  display: grid;
+  min-width: 0;
+  min-height: 420px;
+  background: #dce5ee;
+}
+
+.action-gallery--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.action-gallery figure {
+  min-width: 0;
+  min-height: 0;
   position: relative;
+  margin: 0;
+  overflow: hidden;
 }
 
-.action-section__image--photo {
+.action-gallery img {
   width: 100%;
   height: 100%;
-  min-height: 260px;
+  min-height: 420px;
   object-fit: cover;
+}
+
+.action-gallery figcaption {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.82);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+#iordningstallanderitning .action-gallery img {
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+.action-section__body {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.action-section__body .eyebrow,
+.action-section__body h2,
+.action-section__body h3,
+.action-section__body p {
+  margin: 0;
+}
+
+.action-section__body h2 {
+  color: #193654;
+  font-size: clamp(1.75rem, 3vw, 2.65rem);
+  line-height: 1.05;
+}
+
+.action-section__body h3 {
+  color: var(--text);
+  font-size: 1.08rem;
+}
+
+.action-section__body > p:last-child {
+  margin-top: 0.4rem;
+  color: var(--text-muted);
+}
+
+.actions-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border-radius: 12px;
+  background: #29415d;
+  color: #fff;
+}
+
+.actions-cta h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.65rem, 3vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.actions-cta p:not(.eyebrow) {
+  max-width: 640px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .responsive-image {
     transition: none;
   }
-}
-
-.action-section__image span {
-  position: absolute;
-  inset: 22%;
-  border: 10px solid #132238;
-  border-radius: 6px;
-}
-
-.action-section__body {
-  display: grid;
-  align-content: start;
-  gap: 0.85rem;
-}
-
-.related-services {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  align-items: center;
-}
-
-.related-services a {
-  padding: 0.35rem 0.65rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--brand-dark);
-  font-weight: 800;
-  text-decoration: none;
 }
 
 .contact-grid {
@@ -974,6 +1047,27 @@ address {
 
   .inspection-card img {
     height: min(72vw, 360px);
+  }
+
+  .action-section,
+  .action-section:nth-child(even) {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .action-section:nth-child(even) .action-gallery,
+  .action-section:nth-child(even) .action-section__body {
+    order: initial;
+  }
+
+  .action-gallery,
+  .action-gallery img {
+    min-height: min(68vw, 390px);
+  }
+
+  .actions-cta {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .card-grid--mobile-dropdown {

@@ -6,6 +6,7 @@ type ResponsiveImageProps = {
   className?: string;
   sizes?: string;
   eager?: boolean;
+  direct?: boolean;
 };
 
 export function ResponsiveImage({
@@ -13,7 +14,8 @@ export function ResponsiveImage({
   alt,
   className = "",
   sizes = "(max-width: 720px) 100vw, 33vw",
-  eager = false
+  eager = false,
+  direct = false
 }: ResponsiveImageProps) {
   const [loaded, setLoaded] = useState(false);
   const imageVersion = "2";
@@ -24,8 +26,12 @@ export function ResponsiveImage({
   return (
     <img
       className={classes}
-      src={`${src}-800.jpg?v=${imageVersion}`}
-      srcSet={`${src}-480.jpg?v=${imageVersion} 480w, ${src}-800.jpg?v=${imageVersion} 800w, ${src}-1200.jpg?v=${imageVersion} 1200w`}
+      src={direct ? src : `${src}-800.jpg?v=${imageVersion}`}
+      srcSet={
+        direct
+          ? undefined
+          : `${src}-480.jpg?v=${imageVersion} 480w, ${src}-800.jpg?v=${imageVersion} 800w, ${src}-1200.jpg?v=${imageVersion} 1200w`
+      }
       sizes={sizes}
       width="1200"
       height="1017"

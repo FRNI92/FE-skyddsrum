@@ -2,6 +2,7 @@ import { ActionSection } from "../components/sections/ActionSection";
 import { Seo } from "../components/layout/Seo";
 import { actionSections } from "../data/actions";
 import { articleJsonLdTemplate, pageSeo } from "../utils/seo";
+import { Link } from "react-router-dom";
 
 export default function ActionsPage() {
   return (
@@ -10,7 +11,7 @@ export default function ActionsPage() {
         config={pageSeo({
           title: "Vanliga åtgärder för skyddsrum | Skyddsrumsgruppen",
           description:
-            "En framtida kunskapsbank om vanliga skyddsrumsåtgärder som tätningar, dörrar, luckor och inventering.",
+            "Exempel på vanliga åtgärder i skyddsrum, från rostskydd och genomföringar till ritningar och utrustning.",
           path: "/vanliga-atgarder"
         })}
         jsonLd={[articleJsonLdTemplate]}
@@ -19,14 +20,24 @@ export default function ActionsPage() {
         <div className="container">
           <p className="eyebrow">Kunskapsbank</p>
           <h1>Vanliga åtgärder</h1>
-          <p>Modulära sektioner som senare kan lyftas ut till egna SEO-sidor eller bloggartiklar.</p>
+          <p>Se exempel på hur vanliga brister kan åtgärdas och skyddsrummets funktion återställas.</p>
         </div>
       </section>
-      <section className="section">
+      <section className="section actions-page">
         <div className="container action-list">
           {actionSections.map((section) => (
             <ActionSection key={section.id} section={section} />
           ))}
+          <aside className="actions-cta" aria-labelledby="actions-cta-title">
+            <div>
+              <p className="eyebrow">Nästa steg</p>
+              <h2 id="actions-cta-title">Behöver ditt skyddsrum åtgärdas?</h2>
+              <p>Berätta vad du behöver hjälp med så återkommer vi med ett lämpligt nästa steg.</p>
+            </div>
+            <Link className="button" to="/kontakt#kontaktformular">
+              Kontakta oss
+            </Link>
+          </aside>
         </div>
       </section>
     </>
