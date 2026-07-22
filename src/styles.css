@@ -568,7 +568,6 @@ textarea {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
   min-height: 420px;
-  overflow: hidden;
   background: var(--surface);
   border: 1px solid #d8e1eb;
   border-radius: 12px;
@@ -581,6 +580,7 @@ textarea {
 
 .action-section:nth-child(even) .action-gallery {
   order: 2;
+  border-radius: 0 11px 11px 0;
 }
 
 .action-section:nth-child(even) .action-section__body {
@@ -589,14 +589,12 @@ textarea {
 
 .action-gallery {
   display: grid;
+  position: relative;
   min-width: 0;
   min-height: 420px;
+  overflow: hidden;
   background: #dce5ee;
-}
-
-.action-gallery--2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2px;
+  border-radius: 11px 0 0 11px;
 }
 
 .action-gallery figure {
@@ -612,6 +610,60 @@ textarea {
   height: 100%;
   min-height: 420px;
   object-fit: cover;
+}
+
+.action-gallery--switcher img {
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+  background: #e6edf4;
+}
+
+.action-gallery--switcher {
+  height: 420px;
+  min-height: 420px;
+  align-self: center;
+}
+
+.action-gallery--switcher figure {
+  height: 100%;
+}
+
+.action-gallery__controls {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.78);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.2);
+  transform: translateX(-50%);
+  backdrop-filter: blur(8px);
+}
+
+.action-gallery__controls button {
+  min-width: 76px;
+  padding: 0.45rem 0.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.78rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.action-gallery__controls button.active {
+  background: #fff;
+  color: var(--brand-dark);
+}
+
+.action-gallery__controls button:focus-visible {
+  outline-color: #fff;
 }
 
 .action-gallery figcaption {
@@ -1061,8 +1113,22 @@ address {
   }
 
   .action-gallery,
+  .action-section:nth-child(even) .action-gallery {
+    border-radius: 11px 11px 0 0;
+  }
+
+  .action-gallery,
   .action-gallery img {
     min-height: min(68vw, 390px);
+  }
+
+  .action-gallery--switcher {
+    height: min(68vw, 390px);
+    min-height: min(68vw, 390px);
+  }
+
+  .action-gallery--switcher img {
+    min-height: 0;
   }
 
   .actions-cta {
