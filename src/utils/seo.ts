@@ -1,5 +1,5 @@
 import { company, SITE_NAME, SITE_URL } from "../data/site";
-import type { Article, SeoConfig } from "../types/content";
+import type { SeoConfig } from "../types/content";
 
 export const absoluteUrl = (path = "/") => new URL(path, SITE_URL).toString();
 
@@ -16,6 +16,15 @@ export const organizationJsonLd = {
   url: SITE_URL,
   email: company.email,
   telephone: company.phone,
+  logo: absoluteUrl("/og-image.png"),
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: company.phone,
+    email: company.email,
+    contactType: "customer service",
+    areaServed: "SE",
+    availableLanguage: "Swedish"
+  },
   areaServed: company.areaServed
 };
 
@@ -28,7 +37,7 @@ export const localBusinessJsonLd = {
   telephone: company.phone,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Stockholm",
+    addressLocality: "Örebro",
     addressCountry: "SE"
   },
   areaServed: {
@@ -41,37 +50,5 @@ export const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: SITE_NAME,
-  url: SITE_URL,
-  potentialAction: {
-    "@type": "SearchAction",
-    target: `${SITE_URL}/?q={search_term_string}`,
-    "query-input": "required name=search_term_string"
-  }
+  url: SITE_URL
 };
-
-export const articleJsonLdTemplate = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Framtida artikelrubrik",
-  author: { "@type": "Organization", name: company.name },
-  publisher: { "@type": "Organization", name: company.name }
-};
-
-export const articleJsonLd = (article: Article) => ({
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: article.title,
-  description: article.description,
-  image: article.imageUrl ? [article.imageUrl] : undefined,
-  datePublished: article.publishedAt,
-  dateModified: article.updatedAt,
-  author: {
-    "@type": "Organization",
-    name: article.authorName || company.name
-  },
-  publisher: {
-    "@type": "Organization",
-    name: company.name
-  },
-  mainEntityOfPage: absoluteUrl(`/artiklar/${article.slug}`)
-});

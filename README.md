@@ -1,13 +1,27 @@
-# FE-skyddsrum
+# Skyddsrumsgruppen frontend
 
-## Azure Static Web Apps
+Publik Vite/React-webbplats. Innehåll uppdateras direkt i koden. Det finns ingen admin-, artikel- eller databasintegration.
 
-Frontend byggs med Vite och deployas till Azure Static Web Apps.
+## Utveckling
 
-Viktiga inställningar:
+```powershell
+npm install
+npm run dev
+npm run typecheck
+npm run build
+```
 
-- `output_location`: `dist`
-- `staticwebapp.config.json`: routing och SPA fallback
-- `VITE_API_BASE_URL`: lämna som `/api` om Functions ligger integrerat med SWA, sätt till extern Functions-URL om backend körs separat
+## Kontakt-API
 
-Kontaktformuläret är förberett för en framtida emailservice via `/api/contact`.
+Formuläret skickar `POST /api/contact` som standard.
+
+När frontend ligger hos Loopia och Azure Function körs separat byggs sajten med:
+
+```powershell
+$env:VITE_API_BASE_URL="https://DIN-FUNCTION-APP.azurewebsites.net/api"
+npm run build
+```
+
+Endast den publika API-adressen får finnas i `VITE_API_BASE_URL`. Connection strings, function keys och e-posthemligheter får aldrig läggas i frontend.
+
+Se [DEPLOYMENT.md](./DEPLOYMENT.md) för hela checklistan.

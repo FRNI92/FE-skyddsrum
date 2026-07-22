@@ -1,10 +1,22 @@
 import { ActionSection } from "../components/sections/ActionSection";
 import { Seo } from "../components/layout/Seo";
 import { actionSections } from "../data/actions";
-import { articleJsonLdTemplate, pageSeo } from "../utils/seo";
+import { absoluteUrl, pageSeo } from "../utils/seo";
 import { Link } from "react-router-dom";
 
 export default function ActionsPage() {
+  const actionsJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Vanliga åtgärder i skyddsrum",
+    itemListElement: actionSections.map((section, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: section.title,
+      url: absoluteUrl(`/vanliga-atgarder#${section.id}`)
+    }))
+  };
+
   return (
     <>
       <Seo
@@ -14,7 +26,7 @@ export default function ActionsPage() {
             "Exempel på vanliga åtgärder i skyddsrum, från rostskydd och genomföringar till ritningar och utrustning.",
           path: "/vanliga-atgarder"
         })}
-        jsonLd={[articleJsonLdTemplate]}
+        jsonLd={[actionsJsonLd]}
       />
       <section className="page-hero">
         <div className="container">
