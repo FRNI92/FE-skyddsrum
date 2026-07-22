@@ -557,15 +557,19 @@ textarea {
 
 .action-list {
   display: grid;
+  min-width: 0;
   gap: 2rem;
 }
 
 .actions-page {
+  overflow-x: clip;
   background: #eef3f8;
 }
 
 .action-section {
   display: grid;
+  width: 100%;
+  min-width: 0;
   grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
   min-height: 420px;
   background: var(--surface);
@@ -666,20 +670,6 @@ textarea {
   outline-color: #fff;
 }
 
-.action-gallery figcaption {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.82);
-  color: #fff;
-  font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  backdrop-filter: blur(8px);
-}
 
 #iordningstallanderitning .action-gallery img {
   object-fit: contain;
@@ -688,9 +678,11 @@ textarea {
 
 .action-section__body {
   display: grid;
+  min-width: 0;
   align-content: start;
   gap: 0.75rem;
   padding: clamp(2rem, 4vw, 3.5rem);
+  overflow-wrap: anywhere;
 }
 
 .action-section__body .eyebrow,
@@ -1101,6 +1093,8 @@ address {
   .action-section,
   .action-section:nth-child(even) {
     grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
     min-height: 0;
   }
 
@@ -1119,6 +1113,17 @@ address {
     min-height: min(68vw, 390px);
   }
 
+  .action-gallery {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .action-gallery figure,
+  .action-gallery img {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .action-gallery--switcher {
     height: min(68vw, 390px);
     min-height: min(68vw, 390px);
@@ -1126,6 +1131,72 @@ address {
 
   .action-gallery--switcher img {
     min-height: 0;
+  }
+
+  #golvbrunn .action-gallery,
+  #ventilspindel .action-gallery,
+  #storre-halighet .action-gallery {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+
+  #golvbrunn .action-gallery img,
+  #ventilspindel .action-gallery img,
+  #storre-halighet .action-gallery img {
+    min-height: 0;
+  }
+
+  #kabelgenomforing .action-gallery {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 1;
+  }
+
+  #kabelgenomforing .action-gallery img {
+    min-height: 0;
+    object-fit: contain;
+    background: #e6edf4;
+  }
+
+  #genomforing-va .action-gallery,
+  #rostskyddsbehandling .action-gallery {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  #genomforing-va .action-gallery img,
+  #rostskyddsbehandling .action-gallery img {
+    min-height: 0;
+    object-fit: contain;
+    background: #e6edf4;
+  }
+
+  #utrustning .action-gallery {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 4;
+  }
+
+  #utrustning .action-gallery img {
+    min-height: 0;
+    object-position: center;
+  }
+
+  #utluftskanal .action-gallery,
+  #karnborrning .action-gallery {
+    height: min(96vw, 440px);
+    min-height: min(96vw, 440px);
+  }
+
+  #iordningstallanderitning .action-gallery {
+    height: min(72vw, 400px);
+    min-height: min(72vw, 400px);
+  }
+
+  .action-section__body {
+    padding: 1.5rem;
   }
 
   .actions-cta {
