@@ -36,7 +36,7 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         env:
-          VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL || '/api' }}
+          VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL || 'https://function-skydd-bvedhnhtane2f0cv.swedencentral-01.azurewebsites.net/api' }}
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_HAPPY_WATER_0FC0E4B03 }}
           action: "upload"
