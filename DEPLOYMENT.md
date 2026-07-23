@@ -10,10 +10,12 @@
 
 Lägg följande som Application settings i Function App, aldrig i Git:
 
-- `Email:ConnectionString`
-- `Email:SenderAddress`
-- `Email:RecipientAddress`
-- `Email:SiteUrl=https://www.skyddsrumsgruppen.se`
+- `Email__ConnectionString`
+- `Email__SenderAddress`
+- `Email__RecipientAddress`
+- `Email__SiteUrl=https://www.skyddsrumsgruppen.se`
+
+Dubbel underscore används i Azure eftersom det fungerar som hierarkisk avgränsare på både Windows och Linux. I lokal `local.settings.json` används fortfarande kolon.
 
 ## 2. Azure Function
 
