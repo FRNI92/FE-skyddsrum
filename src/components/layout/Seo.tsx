@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { DEFAULT_OG_IMAGE, SITE_NAME } from "../../data/site";
-import { absoluteUrl } from "../../utils/seo";
+import { absoluteUrl, breadcrumbJsonLd } from "../../utils/seo";
 import type { SeoConfig } from "../../types/content";
 
 type SeoProps = {
@@ -42,20 +42,27 @@ export function Seo({ config, jsonLd = [] }: SeoProps) {
     document.title = config.title;
     setMeta('meta[name="description"]', "content", config.description);
     setMeta('meta[name="robots"]', "content", config.robots ?? "index, follow");
+    setMeta('meta[name="googlebot"]', "content", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
     setMeta('link[rel="canonical"]', "href", canonical);
     setMeta('meta[property="og:title"]', "content", config.title);
     setMeta('meta[property="og:description"]', "content", config.description);
     setMeta('meta[property="og:url"]', "content", canonical);
     setMeta('meta[property="og:type"]', "content", config.type ?? "website");
     setMeta('meta[property="og:site_name"]', "content", SITE_NAME);
+    setMeta('meta[property="og:locale"]', "content", "sv_SE");
     setMeta('meta[property="og:image"]', "content", image);
+    setMeta('meta[property="og:image:alt"]', "content", "Skyddsrum med skyddsrumsdörr och skyddsrumsskylt");
     setMeta('meta[name="twitter:card"]', "content", "summary_large_image");
     setMeta('meta[name="twitter:title"]', "content", config.title);
     setMeta('meta[name="twitter:description"]', "content", config.description);
     setMeta('meta[name="twitter:image"]', "content", image);
 
     document.querySelectorAll("[data-json-ld]").forEach((node) => node.remove());
-    jsonLd.forEach((schema) => {
+    const schemas = config.path === "/"
+      ? jsonLd
+      : [breadcrumbJsonLd(config.path, config.title.split("|")[0].trim()), ...jsonLd];
+
+    schemas.forEach((schema) => {
       const script = document.createElement("script");
       script.type = "application/ld+json";
       script.dataset.jsonLd = "true";

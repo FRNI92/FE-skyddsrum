@@ -22,7 +22,7 @@ const inspectionServices = [
   {
     title: "Skyddsrumstillsyn",
     description:
-      "Detta är den besiktning där man endast kontrollerar sspecifika punkter i skyddsrummet utifrån behov, tidigare anmärkningar eller planerade åtgärder.",
+      "Detta är den besiktning där man endast kontrollerar specifika punkter i skyddsrummet utifrån behov, tidigare anmärkningar eller planerade åtgärder.",
     image: serviceImage("skyddsrumstillsyn"),
     imageAlt: "Skyddsrumsdörr med ventilation och skyddsrumsskylt",
   },
@@ -104,9 +104,9 @@ export default function ServicesPage() {
     <>
       <Seo
         config={pageSeo({
-          title: "Tjänster | Skyddsrumsgruppen",
+          title: "Tjänster för skyddsrum | Skyddsrumsgruppen",
           description:
-            "Konsultation, utbildning, besiktning och åtgärdsstöd för fastighetsägare och förvaltare med skyddsrum.",
+            "Besiktning, konsultation, utbildning, service och åtgärder i skyddsrum för fastighetsägare, BRF:er och förvaltare i hela Sverige.",
           path: "/tjanster",
         })}
       />

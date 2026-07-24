@@ -147,7 +147,7 @@ export default function FaqPage() {
     <>
       <Seo
         config={pageSeo({
-          title: "Vanliga frågor | Skyddsrumsgruppen",
+          title: "Vanliga frågor om skyddsrum | Skyddsrumsgruppen",
           description:
             "Svar på vanliga frågor om ansvar, utrustning, underhåll, myndighetskontroll och ändringar i skyddsrum.",
           path: "/vanliga-fragor",

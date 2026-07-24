@@ -9,9 +9,9 @@ export default function HomePage() {
     <>
       <Seo
         config={pageSeo({
-          title: "Skyddsrumsgruppen | Konsultation, besiktning och åtgärder",
+          title: "Skyddsrum: besiktning, service & åtgärder | Skyddsrumsgruppen",
           description:
-            "Skyddsrumsgruppen hjälper fastighetsägare, BRF:er och förvaltare med konsultation, utbildning, besiktning och åtgärder för skyddsrum.",
+            "Experter på skyddsrum i hela Sverige. Vi hjälper fastighetsägare, BRF:er och förvaltare med besiktning, service, underhåll och åtgärder.",
           path: "/"
         })}
         jsonLd={[organizationJsonLd, localBusinessJsonLd, websiteJsonLd]}
