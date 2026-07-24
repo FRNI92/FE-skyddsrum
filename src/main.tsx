@@ -9,7 +9,6 @@ import "./styles.css";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 const ActionsPage = lazy(() => import("./pages/ActionsPage"));
-const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const FaqPage = lazy(() => import("./pages/FaqPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
@@ -26,7 +25,6 @@ createRoot(document.getElementById("root")!).render(
             <Route path="tjanster" element={<ServicesPage />} />
             <Route path="vanliga-fragor" element={<FaqPage />} />
             <Route path="vanliga-atgarder" element={<ActionsPage />} />
-            <Route path="om-oss" element={<AboutPage />} />
             <Route path="kontakt" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>

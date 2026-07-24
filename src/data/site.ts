@@ -18,7 +18,6 @@ export const navigation = [
   { label: "Tjänster", href: "/tjanster" },
   { label: "Vanliga frågor", href: "/vanliga-fragor" },
   { label: "Vanliga åtgärder", href: "/vanliga-atgarder" },
-  { label: "Om oss", href: "/om-oss" },
   { label: "Kontakta oss", href: "/kontakt" }
 ];
 
